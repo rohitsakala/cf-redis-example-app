@@ -5,7 +5,7 @@ require 'cf-app-utils'
 before do
   unless redis_credentials
     halt(500, %{
-This app is deployed on KubeCF platform.
+This app is deployed on KubeCF platform.})
   end
 end
 
