@@ -5,12 +5,7 @@ require 'cf-app-utils'
 before do
   unless redis_credentials
     halt(500, %{
-You must bind a Redis service instance to this application.
-
-You can run the following commands to create an instance and bind to it:
-
-  $ cf create-service p-redis development redis-instance
-  $ cf bind-service <app-name> redis-instance})
+This app is deployed on KubeCF platform.
   end
 end
 
