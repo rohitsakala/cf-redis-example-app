@@ -14,21 +14,26 @@ put '/:key' do
   if data
     redis_client.set(params[:key], data)
     status 201
-    body 'success'
+    body 'success\n'
   else
     status 400
     body 'data field missing'
   end
 end
 
+get '/' do
+  status 200
+  body 'This app is deployed on KubeCF platform.\n'
+end
+
 get '/:key' do
   value = redis_client.get(params[:key])
   if value
     status 200
-    body value
+    body "#{value}\n"
   else
     status 404
-    body 'key not present'
+    body 'key not present\n'
   end
 end
 
@@ -54,10 +59,10 @@ delete '/:key' do
   result = redis_client.del(params[:key])
   if result > 0
     status 200
-    body 'success'
+    body 'success\n'
   else
     status 404
-    body 'key not present'
+    body 'key not present\n'
   end
 end
 
