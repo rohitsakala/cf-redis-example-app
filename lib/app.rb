@@ -23,7 +23,7 @@ end
 
 get '/' do
   status 200
-  body 'This app is deployed on KubeCF platform.\n'
+  body "This app is deployed on KubeCF platform.\n"
 end
 
 get '/:key' do
