@@ -14,7 +14,7 @@ put '/:key' do
   if data
     redis_client.set(params[:key], data)
     status 201
-    body 'success\n'
+    body "success\n"
   else
     status 400
     body 'data field missing'
@@ -33,7 +33,7 @@ get '/:key' do
     body "#{value}\n"
   else
     status 404
-    body 'key not present\n'
+    body "key not present\n"
   end
 end
 
